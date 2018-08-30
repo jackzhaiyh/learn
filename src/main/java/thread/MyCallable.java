@@ -9,6 +9,11 @@ import java.util.concurrent.Callable;
 public class MyCallable implements Callable<String> {
 
     public String call() {
+
+        for (int i = 0; i < 10; i++) {
+            System.out.println("MyCallable:"+i);
+        }
+
         return "MyCallable";
     }
 }

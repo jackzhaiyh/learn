@@ -8,21 +8,22 @@ import java.util.concurrent.FutureTask;
  * @Date: 2018/8/24 下午9:08
  *
  */
-public class ApplicationTest {
+public class ThreadTest {
 
     public static void main(String[] args){
 
         //Thread
         MyThread myThread = new MyThread();
-        myThread.start();
 
         //Runnable
         MyRunnable myRunnable = new MyRunnable();
-        new Thread(myRunnable).start();
 
         //Callable
         MyCallable myCallable = new MyCallable();
         FutureTask<String> result = new FutureTask<String>(myCallable);
+
+        myThread.start();
+        new Thread(myRunnable).start();
         new Thread(result).start();
 
         try {
